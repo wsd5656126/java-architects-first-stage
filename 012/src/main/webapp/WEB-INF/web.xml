@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id="WebApp_ID" version="3.0">
+    <display-name>012</display-name>
+
+    <filter>
+        <filter-name>demoFilter</filter-name>
+        <filter-class>com.wusd.DemoFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>demoFilter</filter-name>
+        <url-pattern>/</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>refererFilter</filter-name>
+        <filter-class>com.wusd.filter.RefererFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>refererFilter</filter-name>
+        <url-pattern>/</url-pattern>
+    </filter-mapping>
+</web-app>

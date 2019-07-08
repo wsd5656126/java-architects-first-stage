@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--无参构造-->
+    <bean id="userEntity" class="com.wusd.entity.UserEntity"></bean>
+    <!--有参构造-->
+    <bean id="userEntity2" class="com.wusd.entity.UserEntity">
+        <constructor-arg name="name" value="wusd"></constructor-arg>
+        <constructor-arg name="age" value="25"></constructor-arg>
+    </bean>
+    <!--工厂静态方法-->
+    <bean id="getStaticUserEntity" class="com.wusd.entity.ObjectFactory"
+          factory-method="getStaticUserEntity"></bean>
+    <bean id="of" class="com.wusd.entity.ObjectFactory"></bean>
+    <!--工厂普通方法-->
+    <bean id="getUserEntity" factory-bean="of" factory-method="getUserEntity"></bean>
+</beans>
