@@ -10,8 +10,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.wusd</groupId>
-    <artifactId>016_ssm</artifactId>
+    <artifactId>016_web</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
     <dependencies>
+        <dependency>
+            <groupId>com.wusd</groupId>
+            <artifactId>016_service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!-- JSP相关 -->
         <dependency>
             <groupId>jstl</groupId>
@@ -36,6 +44,11 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.wusd</groupId>
+            <artifactId>016_entity</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
