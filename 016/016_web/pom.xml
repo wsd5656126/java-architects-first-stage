@@ -123,10 +123,6 @@
     </dependencies>
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
             <!-- mybatis generator 自动生成代码插件 -->
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
@@ -136,6 +132,19 @@
                     <configurationFile>${basedir}/src/main/resources/generator-config.xml</configurationFile>
                     <overwrite>true</overwrite>
                     <verbose>true</verbose>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <configuration>
+                    <!-- 直接访问 Tomcat 服务器的 manager -->
+                    <url>http://localhost:8080/manager/text</url>
+                    <server>tomcat9</server>
+                    <username>admin</username>
+                    <password>1234</password>
+                    <update>true</update>
+                    <path>/webapp</path>
                 </configuration>
             </plugin>
         </plugins>
